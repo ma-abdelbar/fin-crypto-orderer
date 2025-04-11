@@ -4,6 +4,8 @@ from trader.bitget_sdk.v1.mix.order_api import OrderApi
 from trader.bitget_sdk.v1.mix.account_api import AccountApi
 from .config import get_bitget_config
 from .base import BaseTrader
+from trader.utils import TICK_SIZE, LOT_SIZE_STEP, snap2step
+
 
 VERBOSE = False
 
@@ -144,8 +146,8 @@ class BitgetTrader(BaseTrader):
         order = {
             "symbol": f"{symbol}_UMCBL",
             "marginCoin": "USDT",
-            "size": str(round(quantity, 6)),
-            "triggerPrice": str(round(price, 2)),
+            "size": str(snap2step(quantity, LOT_SIZE_STEP)),
+            "triggerPrice": str(snap2step(price, TICK_SIZE)),
             "planType": "normal_plan",
             "side": side,
             "orderType": "market",
@@ -177,8 +179,8 @@ class BitgetTrader(BaseTrader):
         order = {
             "symbol": f"{symbol}_UMCBL",
             "marginCoin": "USDT",
-            "price": str(round(price, 2)),
-            "size": str(round(quantity, 6)),
+            "price": str(snap2step(price, TICK_SIZE)),
+            "size": str(snap2step(quantity, LOT_SIZE_STEP)),
             "side": side,
             "orderType": "limit",
             "reduceOnly": "true"

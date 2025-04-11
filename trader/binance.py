@@ -3,6 +3,7 @@
 from binance.client import Client
 from .config import get_binance_config
 from .base import BaseTrader
+from trader.utils import TICK_SIZE, LOT_SIZE_STEP, snap2step
 
 
 class BinanceTrader(BaseTrader):
@@ -39,8 +40,8 @@ class BinanceTrader(BaseTrader):
             'symbol': symbol,
             'side': side,
             'type': 'LIMIT',
-            'price': round(price, 2),
-            'quantity': round(quantity, 3),
+            'price': snap2step(price, TICK_SIZE),
+            'quantity': snap2step(quantity, 0.001),
             'timeInForce': 'GTC',
             'reduceOnly': False
         }
@@ -57,8 +58,8 @@ class BinanceTrader(BaseTrader):
             "symbol": symbol,
             "side": side,
             "type": "STOP_MARKET",
-            "stopPrice": round(price, 2),
-            "quantity": round(quantity, 3),
+            "stopPrice": snap2step(price, TICK_SIZE),
+            "quantity": snap2step(quantity, 0.001),
             "timeInForce": "GTC",
             "reduceOnly": reduce_only
         }
@@ -74,8 +75,8 @@ class BinanceTrader(BaseTrader):
             "symbol": symbol,
             "side": side,
             "type": "TAKE_PROFIT_MARKET",  # ✅ This is the correct TP type for Binance
-            "stopPrice": round(price, 2),  # ✅ Must include trigger (stop) price
-            "quantity": round(quantity, 3),
+            "stopPrice": snap2step(price, TICK_SIZE),  # ✅ Must include trigger (stop) price
+            "quantity": snap2step(quantity, 0.001),
             "timeInForce": "GTC",
             "reduceOnly": True
         }
@@ -91,8 +92,8 @@ class BinanceTrader(BaseTrader):
             "symbol": symbol,
             "side": side,
             "type": "LIMIT",
-            "price": round(price, 2),
-            "quantity": round(quantity, 3),
+            "price": snap2step(price, TICK_SIZE),
+            "quantity": snap2step(quantity, 0.001),
             "timeInForce": "GTC",
             "reduceOnly": True
         }
