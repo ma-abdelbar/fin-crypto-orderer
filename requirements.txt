@@ -1,3 +1,7 @@
 python-binance
 python-dotenv
-bitget-python-sdk  # or remove if using request
+ipywidgets
+notebook
+
+
+# Bitget SDK is included locally in trader/bitget_sdk
