@@ -1,0 +1,3 @@
+python-binance
+python-dotenv
+bitget-python-sdk  # or remove if using request
