@@ -70,7 +70,8 @@ class BitgetTrader(BaseTrader):
         print(f"✅ Position mode set to '{mode}' with holdMode '{hold_mode}'")
         return res
 
-    def place_entry_order(self, direction: str, price: float, quantity: float, symbol="BTCUSDT"):
+    def place_entry_order(self, direction: str, price: float, quantity: float, symbol="BTCUSDT", PosSL: float = None):
+
         """
         direction: "Long" or "Short"
         """
@@ -87,6 +88,9 @@ class BitgetTrader(BaseTrader):
             "side": bitget_side,
             "orderType": "limit"
         }
+
+        if PosSL:
+            order["presetStopLossPrice"] = str(PosSL)
 
         if VERBOSE:
             print("📌 Submitting ENTRY order:")

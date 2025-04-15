@@ -33,7 +33,8 @@ class BinanceTrader(BaseTrader):
 
     # === Unified Format === #
 
-    def place_entry_order(self, direction: str, price: float, quantity: float, symbol="BTCUSDT"):
+    def place_entry_order(self, direction: str, price: float, quantity: float, symbol="BTCUSDT", PosSL=None):
+
         side = 'BUY' if direction == 'Long' else 'SELL'
 
         order = {
