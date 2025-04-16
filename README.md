@@ -20,15 +20,6 @@ This project interfaces with live crypto exchanges. Use caution — incorrect us
 - Jupyter widget-based GUI
 ---
 
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ma-abdelbar/fin-crypto-orderer.git
-   cd fin-crypto-orderer
-   ```
----
-
 ## 📁 Project Structure
 
 ```
@@ -51,7 +42,7 @@ fin-crypto-orderer/
 
 ---
 
-## 🚀 Quick Start
+## Setup
 
 1. Clone the repository:
 ```bash
