@@ -32,7 +32,7 @@ This project interfaces with live crypto exchanges. Use caution — incorrect us
 ## 📁 Project Structure
 
 ```
-crypto-orderer/
+fin-crypto-orderer/
 │
 ├── ui.ipynb                # Interactive Jupyter-based GUI
 │
@@ -55,8 +55,8 @@ crypto-orderer/
 
 1. Clone the repo:
 ```bash
-git clone git@github.com:<your-username>/crypto-orderer.git
-cd crypto-orderer
+git clone git@github.com:ma-abdelbar/fin-crypto-orderer.git
+cd fin-crypto-orderer
 ```
 
 2. Create and activate a virtual environment:
