@@ -24,7 +24,7 @@ This project interfaces with live crypto exchanges. Use caution — incorrect us
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/fin-crypto-orderer.git
+   git clone https://github.com/ma-abdelbar/fin-crypto-orderer.git
    cd fin-crypto-orderer
    ```
 ---
@@ -53,7 +53,7 @@ fin-crypto-orderer/
 
 ## 🚀 Quick Start
 
-1. Clone the repo:
+1. Clone the repository:
 ```bash
 git clone git@github.com:ma-abdelbar/fin-crypto-orderer.git
 cd fin-crypto-orderer
