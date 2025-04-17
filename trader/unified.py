@@ -32,7 +32,7 @@ class UnifiedTrader:
             price=price,
             quantity=quantity,
             symbol=symbol,
-            PosSL=PosSL  # ✅ forward it!
+            PosSL=PosSL
         )
 
     def place_sl_order(self, price, quantity, direction, symbol="BTCUSDT"):

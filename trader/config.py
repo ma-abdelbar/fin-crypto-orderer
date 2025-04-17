@@ -4,7 +4,7 @@ from collections import namedtuple
 
 load_dotenv()
 
-# Correct BinanceConfig structure
+# BinanceConfig structure
 BinanceConfig = namedtuple("BinanceConfig", ["api_key", "api_secret", "base_url"])
 
 def get_binance_config(testnet=False):
@@ -21,7 +21,7 @@ def get_binance_config(testnet=False):
             base_url=""  # Use default mainnet endpoint
         )
 
-# Correct BitgetConfig structure
+# BitgetConfig structure
 BitgetConfig = namedtuple("BitgetConfig", ["api_key", "api_secret", "passphrase"])
 
 def get_bitget_config():

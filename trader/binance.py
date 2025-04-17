@@ -75,8 +75,8 @@ class BinanceTrader(BaseTrader):
         order = {
             "symbol": symbol,
             "side": side,
-            "type": "TAKE_PROFIT_MARKET",  # ✅ This is the correct TP type for Binance
-            "stopPrice": snap2step(price, TICK_SIZE),  # ✅ Must include trigger (stop) price
+            "type": "TAKE_PROFIT_MARKET",
+            "stopPrice": snap2step(price, TICK_SIZE),
             "quantity": snap2step(quantity, 0.001),
             "timeInForce": "GTC",
             "reduceOnly": True
